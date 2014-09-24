@@ -2,7 +2,6 @@ language: php
 php:
   - 5.4
 script:
-  - cd selenium-tests/
   - php codecept.phar run --html --steps -g dev
   - php codecept.phar run --html --steps -g dev
   - php codecept.phar run --html --steps -g dev
