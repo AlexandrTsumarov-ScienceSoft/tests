@@ -28,6 +28,7 @@ class BackendModule extends BaseModule {
 
         if (!$I->trySee($I, BackendModule::$expectedBackTitle)) {
 
+            $I->waitForElement(BackendModule::$usernameField, BaseModule::$averageTimeout);
             $I->fillField(BackendModule::$usernameField, BackendModule::$usernameValue);
             $I->fillField(BackendModule::$passwordField, BackendModule::$passwordValue);
             $I->click(BackendModule::$loginButton);
