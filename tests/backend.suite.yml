@@ -11,9 +11,9 @@ modules:
          restart: false
          clear_cookies: false
          window_size: 1280x102
-          capabilities:
-             unexpectedAlertBehaviour: 'accept'
-             browserstack.user: 'vadzimbelski1'
-             browserstack.key : 'hsqp6CZxe4EWEzqSU2gX'
-             browserVersion: '21.0'
-             browserstack.debug: 'true'
+         capabilities:
+            unexpectedAlertBehaviour: 'accept'
+            browserstack.user: 'vadzimbelski1'
+            browserstack.key : 'hsqp6CZxe4EWEzqSU2gX'
+            browserVersion: '21.0'
+            browserstack.debug: 'true'
