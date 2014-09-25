@@ -11,8 +11,7 @@ modules:
          restart: false
          clear_cookies: false
          window_size: 1280x102
-         wait: 5
-         capabilities:
+          capabilities:
              unexpectedAlertBehaviour: 'accept'
              browserstack.user: 'vadzimbelski1'
              browserstack.key : 'hsqp6CZxe4EWEzqSU2gX'
