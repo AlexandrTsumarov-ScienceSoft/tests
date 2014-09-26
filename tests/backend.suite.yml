@@ -12,7 +12,7 @@ modules:
          browser: firefox
          restart: false
          clear_cookies: false
-         window_size: 1280x102
+         #window_size: 1280x102
          capabilities:
             unexpectedAlertBehaviour: 'accept'
             #browserstack.user: 'vadzimbelski1'
