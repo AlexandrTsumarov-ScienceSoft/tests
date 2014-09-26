@@ -25,6 +25,7 @@ class BackendModule extends BaseModule {
         //Login backend
 
         $I->amOnPage(BackendModule::$URL);
+        $I->wait(4);
 
         if (!$I->trySee($I, BackendModule::$expectedBackTitle)) {
 
