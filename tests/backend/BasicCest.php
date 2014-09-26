@@ -928,8 +928,10 @@ class SetupPluginCest {
         $_currency = 'EUR';
 
         BackendModule::of($I)->login();
-
-        PostModule::of($I)->checkTestPostForLaterPayElements($_post, 'global default price', $_price, $_currency, BaseModule::$T1, BaseModule::$C1);
+		
+		PostModule::of($I)->createTestPost(BaseModule::$T1, BaseModule::$C1, null, 'individual price', '0.35');
+		
+		BackendModule::of($I)->logout();
     }
 
 }
