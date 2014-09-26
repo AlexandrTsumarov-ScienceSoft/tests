@@ -6,16 +6,13 @@ modules:
     config:
       WebDriver:
          url: 'http://54.235.193.4/'
-         #host: 'hub.browserstack.com'
          host: 'atsumarov:563a0772-2100-4fcc-b22f-df38c890d17b@ondemand.saucelabs.com'
-         max-duration: 86400
+         "max-duration": 3600
          browser: firefox
          restart: false
          clear_cookies: false
-         #window_size: 1280x102
+         window_size: 1280x102
          capabilities:
             unexpectedAlertBehaviour: 'accept'
-            #browserstack.user: 'vadzimbelski1'
-            #browserstack.key : 'hsqp6CZxe4EWEzqSU2gX'
             browserVersion: '21.0'
             browserstack.debug: 'true'
