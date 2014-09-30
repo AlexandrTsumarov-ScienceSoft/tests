@@ -16,3 +16,24 @@ modules:
             unexpectedAlertBehaviour: 'accept'
             browserVersion: '21.0'
             browserstack.debug: 'true'
+env:
+    firefox:
+        config:
+            WebDriver:
+                host: 'atsumarov:563a0772-2100-4fcc-b22f-df38c890d17b@ondemand.saucelabs.com'
+                browser: firefox
+                restart: false
+                clear_cookies: false
+                window_size: 1280x1024
+                capabilities:
+                    unexpectedAlertBehaviour: 'accept'
+    chrome:
+        config:
+            WebDriver:
+                host: 'atsumarov:563a0772-2100-4fcc-b22f-df38c890d17b@ondemand.saucelabs.com'
+                browser: chrome
+                restart: false
+                clear_cookies: false
+                window_size: 1280x1024
+                capabilities:
+                    unexpectedAlertBehaviour: 'accept'					
