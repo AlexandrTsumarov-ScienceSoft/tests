@@ -893,9 +893,7 @@ class SetupPluginCest {
         $_price = '0.35';
         $_currency = 'EUR';
 
-        //BackendModule::of($I)->login();
-
-        PostModule::of($I)->purschaseAtServer(262);
+        BackendModule::of($I)->login();
     }
 
 }
