@@ -7,7 +7,7 @@ modules:
       WebDriver:
          url: 'http://54.235.193.4/'
          host: 'atsumarov:563a0772-2100-4fcc-b22f-df38c890d17b@ondemand.saucelabs.com'
-         "max-duration": 3600
+         "max-duration": 36000
          browser: firefox
          restart: false
          clear_cookies: false

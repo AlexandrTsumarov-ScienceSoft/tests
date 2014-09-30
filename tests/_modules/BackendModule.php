@@ -25,11 +25,9 @@ class BackendModule extends BaseModule {
         //Login backend
 
         $I->amOnPage(BackendModule::$URL);
-        $I->amOnPage(BackendModule::$URL);
 
         if (!$I->trySee($I, BackendModule::$expectedBackTitle)) {
 
-            $I->waitForElement(BackendModule::$usernameField, BaseModule::$averageTimeout);
             $I->fillField(BackendModule::$usernameField, BackendModule::$usernameValue);
             $I->fillField(BackendModule::$passwordField, BackendModule::$passwordValue);
             $I->click(BackendModule::$loginButton);
