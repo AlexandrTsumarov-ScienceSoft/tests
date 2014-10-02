@@ -26,15 +26,15 @@ before_script:
 - cd ../
 - rm -f sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_data/laterpay.zip
 - cd sources_plugin/laterpay-wordpress-plugin/
-- zip -r9 sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_data/laterpay.zip laterpay/
+- zip -r9 ../../sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_data/laterpay.zip laterpay/
 - cd ../../
 script:
 - cd sources_test/laterpay-wordpress-plugin/selenium-tests/
-- mkdir -p tests/_reports/firefox_win
 - php codecept.phar run --html --steps -g dev --env firefox_win
+- mkdir -p tests/_reports/firefox_win
 - mv -f tests/_output/* tests/_reports/firefox_win
-- mkdir -p tests/_reports/safari_mac
 - php codecept.phar run --html --steps -g dev --env safari_mac
+- mkdir -p tests/_reports/safari_mac
 - mv -f tests/_output/* tests/_reports/safari_mac
 after_script:
 - cd ../../../
