@@ -32,14 +32,16 @@ script:
 - php codecept.phar run --html --steps -g dev --env safari_mac
 #after_success: after_failure:
 after_script:
-- ls -la 
 - mkdir /home/travis/reports_test
 - cd /home/travis/reports_test
+- ls -la 
+- echo "$TRAVIS_COMMIT, "$TRAVIS_COMMIT
 - git clone git@github.com:AlexandrTsumarov-ScienceSoft/reports.git
-- eval "mkdir /home/travis/reports_test/reports/$TRAVIS_COMMIT/"
-- eval "cp -fr /home/travis/sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_data/laterpay.zip /home/travis/reports_test/reports/$TRAVIS_COMMIT/"
-- eval "cp -fr /home/travis/sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_output /home/travis/reports_test/reports/$TRAVIS_COMMIT/"
-- cd /home/travis/reports_test/reports
+- cd ../
+- eval "mkdir reports_test/reports/$TRAVIS_COMMIT/"
+- eval "cp -fr sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_data/laterpay.zip reports_test/reports/$TRAVIS_COMMIT/"
+- eval "cp -fr sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_output reports_test/reports/$TRAVIS_COMMIT/"
+- cd reports_test/reports
 - git add .
 - git commit -a -m "Committed by Travis-CI"
 - git push origin master
