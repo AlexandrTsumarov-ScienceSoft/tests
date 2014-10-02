@@ -24,8 +24,7 @@ before_script:
 - git clone -b feature/selenium-tests git@github.com:laterpay/laterpay-wordpress-plugin.git
 - cd ../
 - rm -f sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_data/laterpay.zip
-#- zip -r9 sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_data/laterpay.zip sources_plugin/laterpay-wordpress-plugin/laterpay/
-- zip -r9 sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_data/laterpay.zip sources_plugin/laterpay-wordpress-plugin/
+- zip -r9 sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_data/laterpay.zip sources_plugin/laterpay-wordpress-plugin/laterpay/
 script:
 - cd sources_test/laterpay-wordpress-plugin/selenium-tests/
 - php codecept.phar run --html --steps -g UI1
@@ -42,5 +41,5 @@ after_script:
 - eval "cp -fr /home/travis/sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_output /home/travis/reports_test/reports/$TRAVIS_COMMIT/"
 - cd /home/travis/reports_test/reports
 - git add .
-- git commit -a -m "Committed by Travis-CI build number: $TRAVIS_COMMIT"
+- git commit -a -m "Committed by Travis-CI"
 - git push origin master
