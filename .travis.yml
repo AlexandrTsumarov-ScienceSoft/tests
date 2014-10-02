@@ -36,9 +36,9 @@ after_script:
 - mkdir /home/travis/reports_test
 - cd /home/travis/reports_test
 - git clone git@github.com:AlexandrTsumarov-ScienceSoft/reports.git
-- eval "mkdir /home/travis/reports_test/reports/$TRAVIS_JOB_ID/"
-- eval "cp -fr /home/travis/sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_data/laterpay.zip /home/travis/reports_test/reports/$TRAVIS_JOB_ID/"
-- eval "cp -fr /home/travis/sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_output /home/travis/reports_test/reports/$TRAVIS_JOB_ID/"
+- eval "mkdir /home/travis/reports_test/reports/$TRAVIS_COMMIT/"
+- eval "cp -fr /home/travis/sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_data/laterpay.zip /home/travis/reports_test/reports/$TRAVIS_COMMIT/"
+- eval "cp -fr /home/travis/sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_output /home/travis/reports_test/reports/$TRAVIS_COMMIT/"
 - cd /home/travis/reports_test/reports
-- git commit -a -m "Committed by Travis-CI build number: $TRAVIS_JOB_ID"
+- git commit -a -m "Committed by Travis-CI build number: $TRAVIS_COMMIT"
 - git push
