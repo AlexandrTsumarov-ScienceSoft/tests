@@ -3,7 +3,7 @@
 #after_success: after_failure:
 language: php
 php:
-- 5.4
+- 5.5
 env:
   global:
   - secure: RSmkhgR2Ekhlig+EMjDwMrOBoNNtaEfKpRa5guUB7+WbaqpOxkJLiI77Hm0sg0r7SqGexjif+lyK82BI16Ro1WDKPK1QcIfOUjxcX1NG8I92JMGJaKVd6MhHOiUNHVMJgvxJBao9OAllhmgiJoN/pu+432gXnJcUyYIT2jTz8zg=
@@ -33,7 +33,7 @@ script:
 - php codecept.phar run --html --steps -g UI1 --env firefox_win
 - mkdir -p tests/_reports/firefox_win
 - mv -f tests/_output/* tests/_reports/firefox_win
-- php codecept.phar run --html --steps -g UI1 --env safari_mac
+- php codecept.phar run --html --steps -g UI2 --env safari_mac
 - mkdir -p tests/_reports/safari_mac
 - mv -f tests/_output/* tests/_reports/safari_mac
 after_script:
