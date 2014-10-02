@@ -15,7 +15,8 @@ before_install:
 before_script:
 - ls -la
 - git clone git@github.com:laterpay/laterpay-wordpress-plugin.git
+- cd laterpay-wordpress-plugin
 - git pull origin feature/selenium-tests
 script:
-- cd laterpay-wordpress-plugin/selenium-tests/
+- cd selenium-tests/
 - php codecept.phar run --html --steps -g UI1
