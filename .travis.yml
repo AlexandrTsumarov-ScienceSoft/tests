@@ -25,7 +25,6 @@ before_script:
 - cd ../
 - rm -f sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_data/laterpay.zip
 - zip -r9 sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_data/laterpay.zip sources_plugin/laterpay-wordpress-plugin/laterpay/
-- ls -la 
 script:
 - cd sources_test/laterpay-wordpress-plugin/selenium-tests/
 - php codecept.phar run --html --steps -g UI1
@@ -33,6 +32,7 @@ script:
 - php codecept.phar run --html --steps -g dev --env safari_mac
 #after_success: after_failure:
 after_script:
+- ls -la 
 - mkdir /home/travis/reports_test
 - cd /home/travis/reports_test
 - git clone git@github.com:AlexandrTsumarov-ScienceSoft/reports.git
@@ -41,4 +41,4 @@ after_script:
 - eval "cp -fr /home/travis/sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_output /home/travis/reports_test/reports/$TRAVIS_COMMIT/"
 - cd /home/travis/reports_test/reports
 - git commit -a -m "Committed by Travis-CI build number: $TRAVIS_COMMIT"
-- git push
+- git push origin master
