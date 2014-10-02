@@ -311,7 +311,7 @@ class SetupPluginCest {
                 ->deleteCategoryDefaultPrice(BaseModule::$CAT1);
 
         PostModule::of($I)
-                ->checkTestPostForLaterPayElements($I->getVar('post'), 'category default price', 0.69, 'USD', BaseModule::$T1, BaseModule::$C1, 60);
+                ->checkTestPostForLaterPayElements($I->getVar('post'), 'category default price', 0.89, 'USD', BaseModule::$T1, BaseModule::$C1, 60);
     }
 
     /**
@@ -500,8 +500,8 @@ class SetupPluginCest {
 
         $dynamic_price = array(
             'start_price' => 0.85,
-            'period' => 5,
-            'end_price' => 0.05
+            'period'      => 5,
+            'end_price'   => 0.05
         );
 
         PostModule::of($I)
@@ -864,7 +864,7 @@ class SetupPluginCest {
                 ->uninstallPlugin()
                 ->installPlugin()
                 ->activatePlugin()
-                ->goThroughGetStartedTab(0.35, 'USD');
+                ->goThroughGetStartedTab('0.35', 'EUR');
 
         CategoryModule::of($I)
                 ->createTestCategory(BaseModule::$CAT1);
@@ -872,9 +872,9 @@ class SetupPluginCest {
         SetupModule::of($I)->validateGlobalPrice();
 
         CategoryDefaultPriceModule::of($I)
-                ->createCategoryDefaultPrice(BaseModule::$CAT1, 0.35);
+                ->createCategoryDefaultPrice(BaseModule::$CAT1, '0.35');
 
-        CategoryDefaultPriceModule::of($I)->validateCategoryPrice();
+        //CategoryDefaultPriceModule::of($I)->validateCategoryPrice();
 
         PostModule::of($I)->createTestPost(BaseModule::$T1, BaseModule::$C1, null, 'individual price', '0.35');
 
@@ -887,13 +887,7 @@ class SetupPluginCest {
      */
     public function dev(BackendTester $I) {
 
-        $I->wantToTest('Dev');
-
-        $_post = 53;
-        $_price = '0.35';
-        $_currency = 'EUR';
-
-        BackendModule::of($I)->login();
+        $I->wantToTest('Development run');
     }
 
 }

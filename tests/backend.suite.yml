@@ -3,37 +3,35 @@ modules:
     enabled:
         - WebDriver
         - CommonHelper
+        - Db
     config:
-      WebDriver:
-         url: 'http://54.235.193.4/'
-         host: 'atsumarov:563a0772-2100-4fcc-b22f-df38c890d17b@ondemand.saucelabs.com'
-         "max-duration": 36000
-         browser: firefox
-         restart: false
-         clear_cookies: false
-         window_size: 1280x1024
-         capabilities:
-            unexpectedAlertBehaviour: 'accept'
-            browserVersion: '21.0'
-            browserstack.debug: 'true'
+        WebDriver:
+            host: 'atsumarov:563a0772-2100-4fcc-b22f-df38c890d17b@ondemand.saucelabs.com'
+            url: 'http://54.235.193.4/'
+            browser: firefox
+            restart: false
+            clear_cookies: false
+            window_size: 1280x1024
+            capabilities:
+                unexpectedAlertBehaviour: 'accept'
+                "max-duration": 7200
+        Db:
+            dsn: 'mysql:host=localhost;dbname=wordpress_default'
+            host: 'localhost'
+            user: 'wp'
+            password: 'wp'
+            dump: tests/_data/refresh.sql
+            populate: true
 env:
-    firefox:
+    firefox_aws:
         config:
             WebDriver:
                 host: 'atsumarov:563a0772-2100-4fcc-b22f-df38c890d17b@ondemand.saucelabs.com'
+                url: 'http://54.235.193.4/'
                 browser: firefox
                 restart: false
                 clear_cookies: false
                 window_size: 1280x1024
                 capabilities:
                     unexpectedAlertBehaviour: 'accept'
-    chrome:
-        config:
-            WebDriver:
-                host: 'atsumarov:563a0772-2100-4fcc-b22f-df38c890d17b@ondemand.saucelabs.com'
-                browser: chrome
-                restart: false
-                clear_cookies: false
-                window_size: 1280x1024
-                capabilities:
-                    unexpectedAlertBehaviour: 'accept'					
+
