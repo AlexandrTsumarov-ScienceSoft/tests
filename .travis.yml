@@ -13,7 +13,7 @@ before_install:
 - chmod 600 ~/.ssh/id_rsa*
 - eval `ssh-agent -s`
 #- ssh-add-pass $github_key_pass ~/.ssh/id_rsa
-- ssh-add $github_key_pass ~/.ssh/id_rsa -p$github_key_pass
+- ssh-add -p$github_key_pass ~/.ssh/id_rsa
 before_script:
 - git clone git@github.com:laterpay/laterpay-wordpress-plugin.git
 - git pull origin feature/selenium-tests
