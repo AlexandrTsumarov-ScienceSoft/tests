@@ -23,6 +23,10 @@ before_script:
 - cd sources_test
 - git clone -b feature/selenium-tests git@github.com:laterpay/laterpay-wordpress-plugin.git
 - cd ../
+- mkdir reports_test
+- cd reports_test
+- git clone git@github.com:AlexandrTsumarov-ScienceSoft/reports.git
+- cd ../
 - rm -f sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_data/laterpay.zip
 - zip -r9 sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_data/laterpay.zip sources_plugin/laterpay-wordpress-plugin/laterpay/
 - ls -la 
@@ -32,4 +36,9 @@ script:
 - php codecept.phar run --html --steps -g dev --env firefox_win
 - php codecept.phar run --html --steps -g dev --env safari_mac
 after_success:
+- cd /homre/travis/
+- cp -fr sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_output reports_test/$TRAVIS_JOB_ID
+- cd /reports_test
+- git commit -a -m "Committed by Travis-CI build number: $TRAVIS_JOB_ID"
+- git push
 
