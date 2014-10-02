@@ -2,6 +2,10 @@
 
 <p>This is test cases for official LaterPay plugin.</p>
 
+<h2>Smoke test result for last push (by Travis): <img src='https://api.travis-ci.org/AlexandrTsumarov-ScienceSoft/tests.svg'></h2>
+
+<h2>Test result for last nightly run (by Cron): <a href='http://54.235.193.4/tests/report.html'><img src='http://54.235.193.4/tests/status.svg'></a></h2>
+
 <h2>Installation</h2>
 1. The test cases is available on https://github.com/laterpay/laterpay-wordpress-plugin/tree/feature/selenium-tests
 2. To run it with local Selenium have to be installed and started:
