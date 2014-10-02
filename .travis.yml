@@ -35,10 +35,10 @@ script:
 - php codecept.phar run --html --steps -g UI1
 - php codecept.phar run --html --steps -g dev --env firefox_win
 - php codecept.phar run --html --steps -g dev --env safari_mac
-after_success:
+#after_success: after_failure:
+after_script:
 - cd /homre/travis/
 - cp -fr sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_output reports_test/$TRAVIS_JOB_ID
 - cd /reports_test
 - git commit -a -m "Committed by Travis-CI build number: $TRAVIS_JOB_ID"
 - git push
-
