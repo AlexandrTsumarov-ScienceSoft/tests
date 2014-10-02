@@ -38,6 +38,8 @@ after_script:
 - git clone git@github.com:AlexandrTsumarov-ScienceSoft/reports.git
 - cd ../
 - eval "mkdir reports_test/reports/$TRAVIS_COMMIT/"
+- ls -la sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_data/
+- ls -la sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_output/
 - eval "cp -fr sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_data/laterpay.zip reports_test/reports/$TRAVIS_COMMIT/"
 - eval "cp -fr sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_output reports_test/reports/$TRAVIS_COMMIT/"
 - cd reports_test/reports
