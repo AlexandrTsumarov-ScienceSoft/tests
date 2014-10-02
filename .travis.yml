@@ -51,6 +51,6 @@ after_script:
 - git config --global user.email "travis@example.com"
 - git config --global user.name "Travis CI"
 - git add .
-- git commit -a -m "Commit by Travis"$(date)
+- git commit -a -m "Commit by Travis"
 - ls -la 
 - git push origin master
