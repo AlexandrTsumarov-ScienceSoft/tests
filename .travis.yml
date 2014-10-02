@@ -41,5 +41,6 @@ after_script:
 - eval "cp -fr /home/travis/sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_data/laterpay.zip /home/travis/reports_test/reports/$TRAVIS_COMMIT/"
 - eval "cp -fr /home/travis/sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_output /home/travis/reports_test/reports/$TRAVIS_COMMIT/"
 - cd /home/travis/reports_test/reports
+- git add .
 - git commit -a -m "Committed by Travis-CI build number: $TRAVIS_COMMIT"
 - git push origin master
