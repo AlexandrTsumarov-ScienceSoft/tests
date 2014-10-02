@@ -27,7 +27,7 @@ before_script:
 - zip -r9 sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_data/laterpay.zip sources_plugin/laterpay-wordpress-plugin/laterpay/
 script:
 - cd sources_test/laterpay-wordpress-plugin/selenium-tests/
-- php codecept.phar run --html --steps -g UI1
+#- php codecept.phar run --html --steps -g UI1
 - php codecept.phar run --html --steps -g dev --env firefox_win
 - php codecept.phar run --html --steps -g dev --env safari_mac
 #after_success: after_failure:
