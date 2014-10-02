@@ -32,7 +32,7 @@ script:
 - php codecept.phar run --html --steps -g dev --env safari_mac
 #after_success: after_failure:
 after_script:
-- cd ../../
+- cd ../../../
 - mkdir /reports_test
 - cd /home/travis/reports_test
 - echo "$TRAVIS_COMMIT, "$TRAVIS_COMMIT
