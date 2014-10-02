@@ -2,7 +2,7 @@
 
 <p>This is test cases for official LaterPay plugin.</p>
 
-<h2>Smoke test result for last push (by Travis): <img src='https://api.travis-ci.org/AlexandrTsumarov-ScienceSoft/tests.svg'></h2>
+<h2>Smoke test result for last push (by Travis): <a target=_blank href='https://travis-ci.org/AlexandrTsumarov-ScienceSoft/tests'><img src='https://api.travis-ci.org/AlexandrTsumarov-ScienceSoft/tests.svg'></a></h2>
 
 <h2>Test result for last nightly run (by Cron): <a target=_blank href='http://54.235.193.4/tests/report.html'><img src='http://54.235.193.4/tests/status.svg'></a></h2>
 

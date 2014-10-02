@@ -1,3 +1,4 @@
+#- sed "s/password: 'wp'/password: '$key_hash'/" sources_test/laterpay-wordpress-plugin/selenium-tests/tests/backend.suite.yml > sources_test/laterpay-wordpress-plugin/selenium-tests/tests/backend.suite.yml
 language: php
 php:
 - 5.4
@@ -17,17 +18,15 @@ before_script:
 - cd sources_plugin
 - git clone git@github.com:laterpay/laterpay-wordpress-plugin.git
 - cd ../
-- zip -r9 laterpay.zip sources_plugin/laterpay-wordpress-plugin/laterpay
 - mkdir sources_test
 - cd sources_test
 - git clone -b feature/selenium-tests git@github.com:laterpay/laterpay-wordpress-plugin.git
-- cd laterpay-wordpress-plugin
-
-#- sed "s/password: 'wp'/password: '$key_hash'/" tests/backend.suite.yml > tests/backend.suite.yml
-#- "curl --ftp-create-dirs -T uploadfilename -u wp:$key_hash ftp://54.235.193.4/"
-- ls -la
+- cd ../
+- zip -r9 laterpay.zip sources_plugin/laterpay-wordpress-plugin/laterpay
+- "curl --ftp-create-dirs -T uploadfilename -u wp:$key_hash ftp://54.235.193.4/srv/www/wordpress-default/tests/"
+- ls -la 
 script:
-- cd selenium-tests/
+- cd sources_test/laterpay-wordpress-plugin/selenium-tests/
 - php codecept.phar run --html --steps -g UI1
 after_success:
 
