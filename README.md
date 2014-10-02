@@ -1,28 +1,7 @@
 <h1>Acceptance test cases by Codeception-Selenium to test laterpay-wordpress-plugin</h1>
 
-<p>This is test cases for official LaterPay plugin.</p>
-
-<h2>Smoke test result for last push (by Travis): <a target=_blank href='https://travis-ci.org/AlexandrTsumarov-ScienceSoft/tests'><img src='https://api.travis-ci.org/AlexandrTsumarov-ScienceSoft/tests.svg'></a></h2>
-
-<h2>Test result for last nightly run (by Cron): <a target=_blank href='http://54.235.193.4/tests/report.html'><img src='http://54.235.193.4/tests/status.svg'></a></h2>
-
-<h2>Installation</h2>
-1. The test cases is available on https://github.com/laterpay/laterpay-wordpress-plugin/tree/feature/selenium-tests
-2. To run it with local Selenium have to be installed and started:
-<code>
-sudo apt-get install java-common default-jre firefox Xvfb Xorg
-wget http://release.seleniumhq.org/selenium-ide/2.6.0/selenium-ide-2.6.0.jar 
-sudo cp http://release.seleniumhq.org/selenium-ide/2.6.0/selenium-ide-2.6.0.jar /usr/local/bin/
-screen -d -m Xvfb :99 -ac -screen 0 1280x1024x24 &
-export DISPLAY=:99
-screen -d -m java -jar /usr/local/bin/selenium-server-standalone-2.42.2.jar
-</code>
-
-<h2>Run tests manually</h2>
-1. Run one test case manually 
-<code>php codecept.phar run --html --steps -g UI1</code>
-2. Run all tests
-<code>php codecept.phar run --html --steps</code>
-
-<h2>Copyright</h2>
-Copyright 2014 LaterPay GmbH – Released under MIT License
+<h3>Smoke test status for last push (by Travis): <img src='https://api.travis-ci.org/AlexandrTsumarov-ScienceSoft/tests.svg'></h3>
+<ul>
+<li><a target=_blank href='http://htmlpreview.github.io/?https://raw.githubusercontent.com/AlexandrTsumarov-ScienceSoft/reports/master/current/firefox_win/report.html'>Report for firefox, windows 7, UI1</a></li>
+<li><a target=_blank href='http://htmlpreview.github.io/?https://raw.githubusercontent.com/AlexandrTsumarov-ScienceSoft/reports/master/current/safari_mac/report.html'>Report for safari, mac, UI1</a></li>
+</ul>
