@@ -30,10 +30,10 @@ before_script:
 - cd ../../
 script:
 - cd sources_test/laterpay-wordpress-plugin/selenium-tests/
-#- php codecept.phar run --html --steps --env firefox_win -g UI1
-#- mkdir -p tests/_reports/firefox_win
-#- mv -f tests/_output/* tests/_reports/firefox_win
-- php codecept.phar run --html --steps --env safari_mac -g UI2
+- php codecept.phar run --html --steps --env firefox_win -g UI1
+- mkdir -p tests/_reports/firefox_win
+- mv -f tests/_output/* tests/_reports/firefox_win
+- php codecept.phar run --html --steps --env safari_mac -g UI1
 - mkdir -p tests/_reports/safari_mac
 - mv -f tests/_output/* tests/_reports/safari_mac
 after_script:
