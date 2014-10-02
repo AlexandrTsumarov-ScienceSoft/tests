@@ -34,7 +34,6 @@ script:
 after_script:
 - mkdir /home/travis/reports_test
 - cd /home/travis/reports_test
-- ls -la 
 - echo "$TRAVIS_COMMIT, "$TRAVIS_COMMIT
 - git clone git@github.com:AlexandrTsumarov-ScienceSoft/reports.git
 - cd ../
@@ -42,6 +41,9 @@ after_script:
 - eval "cp -fr sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_data/laterpay.zip reports_test/reports/$TRAVIS_COMMIT/"
 - eval "cp -fr sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_output reports_test/reports/$TRAVIS_COMMIT/"
 - cd reports_test/reports
+- git config --global user.email "travis@example.com"
+- git config --global user.name "Travis CI"
 - git add .
 - git commit -a -m "Committed by Travis-CI"
+- ls -la 
 - git push origin master
