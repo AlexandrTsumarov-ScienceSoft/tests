@@ -46,7 +46,10 @@ after_script:
 - touch reports_test/reports/$TRAVIS_COMMIT/README.md
 - echo " TRAVIS_BRANCH :$TRAVIS_BRANCH <br> TRAVIS_JOB_ID :$TRAVIS_JOB_ID <br> TRAVIS_PULL_REQUEST :$TRAVIS_PULL_REQUEST <br> " > reports_test/reports/$TRAVIS_COMMIT/README.md
 - cp -fr sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_data/laterpay.zip reports_test/reports/$TRAVIS_COMMIT/
-- cp -fr sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_reports reports_test/reports/$TRAVIS_COMMIT/
+- cp -fr sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_reports/* reports_test/reports/$TRAVIS_COMMIT/
+- rm -fr reports_test/reports/current/*
+- cp -fr sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_data/laterpay.zip reports_test/reports/current/
+- cp -fr sources_test/laterpay-wordpress-plugin/selenium-tests/tests/_reports/* reports_test/reports/current/
 - cd reports_test/reports
 - git config --global user.email "travis@example.com"
 - git config --global user.name "Travis CI"
