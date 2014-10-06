@@ -16,3 +16,4 @@ acceptance tests for laterpay-wordpress-plugin
 </ul>
 CHANGES
 CHANGES II
+CHANGES b1
