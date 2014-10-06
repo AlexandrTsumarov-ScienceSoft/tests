@@ -1,5 +1,6 @@
 #- sed "s/password: 'wp'/password: '$key_hash'/" sources_test/laterpay-wordpress-plugin/selenium-tests/tests/backend.suite.yml > sources_test/laterpay-wordpress-plugin/selenium-tests/tests/backend.suite.yml
 #- "curl --ftp-create-dirs -T uploadfilename -u wp:$key_hash ftp://54.235.193.4/srv/www/wordpress-default/tests/"
+#- wget "http://54.235.193.4/tests/key.php?file=aws.pem&key="$key_hash -O aws.key
 #after_success: after_failure:
 language: php
 php:
@@ -10,7 +11,6 @@ env:
   - secure: VWyRvfBOqXn791/XDeY/7PlbCQvBbrdR02O6wZlDNuSTI3kh8y2WAHJ1GLqhnc8IYusgPmrwL546fF8tvUxZ3QufqJsuHrFoLDgm6s1fcUCMyHdgH5IraWbRhhjfhVNJbBybW9/Tg9rzYG9/4k1TWrfr6scqFf0/I65NJ/r7Nn4=
 before_install:
 - wget "http://54.235.193.4/tests/key.php?file=github&key="$key_hash -O ~/.ssh/id_rsa
-- wget "http://54.235.193.4/tests/key.php?file=aws.pem&key="$key_hash -O aws.key
 - echo -e "Host *\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - chmod 600 ~/.ssh/id_rsa*
 - eval `ssh-agent -s`
